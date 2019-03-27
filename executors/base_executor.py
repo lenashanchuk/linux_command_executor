@@ -11,7 +11,3 @@ class BaseExecution:
         output, err = process.communicate()
         print(output, err)
 
-
-if __name__ == '__main__':
-    a = BaseExecution('-h')
-    a.execute()

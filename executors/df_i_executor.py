@@ -6,10 +6,5 @@ class DFInodeExecutor(BaseExecution):
         super().__init__('-i')
 
 
-if __name__ == '__main__':
-    a = DFInodeExecutor()
-    a.execute()
-    a.flag
-
 
 
