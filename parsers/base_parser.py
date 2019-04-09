@@ -10,32 +10,32 @@ class BaseParser:
 
     def parse(self):
         if self.return_code:
-            result_dict = {
-                "status": "failure",
-                "error": f"Error with return code {self.return_code}",
-                "result": "None"
-            }
+            status = "failure"
+            error = f"Error with return code {self.return_code}"
+            result = None
         elif self.df_error:
-            result_dict = {
-                "status": "failure",
-                "error": f"Error {self.df_error}",
-                "result": "None"
-            }
+            status = "failure"
+            error = f"Error {self.df_error}"
+            result = None
         else:
-            data = self.df_res.decode("utf-8")
+            data = self.df_res.decode("utf-8").replace("Mounted on", "Mounted_on")
             rows = []
             for line in data.split('\n'):
                 line = re.sub('\s+', ' ', line)
                 rows.append(line.split(' '))
             keys = rows.pop(0)
             result_list = []
-            for row in rows:
+            for row in rows[:len(rows)-1]:
                 result_list.append(dict(zip(keys, row)))
-            result_dict = {
-                "status": "success",
-                "error": "None",
-                "result": result_list
-            }
+            status = "success"
+            error = None
+            result = result_list
+
+        result_dict = {
+            "status": status,
+            "error": error,
+            "result": result
+        }
         json_result = json.dumps(result_dict, indent=4)
         return json_result
 

@@ -1,4 +1,4 @@
-from .base_executor import BaseExecution
+from executors.base_executor import BaseExecution
 from parsers import DfHumanReadableParser
 
 
@@ -7,3 +7,8 @@ class DFHumanReadableExecutor(BaseExecution):
         super().__init__('-h', DfHumanReadableParser)
 
 
+
+if __name__ == '__main__':
+    a = DFHumanReadableExecutor()
+    res = a.execute()
+    print(res)
