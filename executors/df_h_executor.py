@@ -6,9 +6,3 @@ class DFHumanReadableExecutor(BaseExecution):
     def __init__(self):
         super().__init__('-h', DfHumanReadableParser)
 
-
-
-if __name__ == '__main__':
-    a = DFHumanReadableExecutor()
-    res = a.execute()
-    print(res)
