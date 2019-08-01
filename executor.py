@@ -7,6 +7,7 @@ class Executor:
         if flag == 'human1':
             executor_type = DFHumanReadableExecutor
         elif flag == 'inode':
+            print('hello')
             executor_type = DFInodeExecutor
         else:
             executor_type = DFExecutor
