@@ -4,7 +4,8 @@ from executors import DFHumanReadableExecutor, DFExecutor, DFInodeExecutor
 class Executor:
     @staticmethod
     def execute(flag):
-        if flag == 'human1':
+        if flag == 'human':
+            print(flag)
             executor_type = DFHumanReadableExecutor
         elif flag == 'inode':
             print('hello')
