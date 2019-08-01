@@ -5,6 +5,7 @@ class Executor:
     @staticmethod
     def execute(flag):
         if flag == 'human':
+            print(flag)
             executor_type = DFHumanReadableExecutor
         elif flag == 'inode':
             executor_type = DFInodeExecutor
