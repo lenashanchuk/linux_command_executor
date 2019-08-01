@@ -12,6 +12,7 @@ def get_args():
 def main():
     try:
         args = get_args()
+        print(args)
         res = Executor.execute(args.flag)
         print(res)
     except Exception as e:
