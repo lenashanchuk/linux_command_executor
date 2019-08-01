@@ -1,3 +1,4 @@
+
 import argparse
 from executor import Executor
 
@@ -11,7 +12,7 @@ def get_args():
 
 def main():
     try:
-        args = get_args()
+       # args = get_args()
         res = Executor.execute(args.flag)
         print(res)
     except Exception as e:
